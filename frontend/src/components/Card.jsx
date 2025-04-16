@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "./Card.css";
 
 function Card({ quoteData, position = 'center', onClick, onNext, onPrev }) {
+  console.log('card - ', quoteData);
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
 
@@ -36,21 +37,23 @@ function Card({ quoteData, position = 'center', onClick, onNext, onPrev }) {
     <div
       className={`card ${position}`}
       onClick={onClick}
+      role="button"
+  tabIndex="0"
     >
       <div
         className="poem-card"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        {/* <div className="blurred-bg" /> */}
+
         <div className="poem-content">
           <h2>{quoteData?.title}</h2>
-          <p className="author">~ {quoteData?.author}</p>
           <pre className="lines">{quoteData?.lines?.join("\n")}</pre>
-          {/* <div className="nav-buttons">
-            <button onClick={onPrev}>⟵</button>
-            <button onClick={onNext}>⟶</button>
-          </div> */}
+
+          <button
+            className="author_pill"
+          >{quoteData?.author}</button>
+
         </div>
       </div>
     </div>

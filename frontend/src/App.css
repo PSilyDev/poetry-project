@@ -19,14 +19,18 @@ body, html, #root {
 }
 
 .content {
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: space-between;
   /* padding: 20px; */
+  /* background-color: green; */
+  padding-bottom: 20px;
 }
 
 .master {
+  /* background-color: gray; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +70,7 @@ body, html, #root {
 
 .search_left {
   
-  /* background-color: red; */
+  /* background-color: green; */
   margin-top: 40px;
   /* width: 100%; */
   /* max-width: 900px; */

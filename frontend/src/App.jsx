@@ -29,10 +29,8 @@ function App() {
   return (
     <>
       <div className="base" style={{ position: "relative", overflow: "hidden" }}>
-        <div className="background-gradient" />
-  
+        <div className="background-gradient" /> 
         <div className="blur-fade-overlay"></div>
-  
         <div className="content">
           <div className="master">
             <div className={`search_parent ${showHeading ? 'dropdown' : ''}`}>
@@ -65,9 +63,9 @@ function App() {
 
   
             </div>
-            <div className="search_left">
-              <SearchBox setQuoteData={setQuoteData} setShowSearch={setShowSearch} />
-            </div>
+          </div>
+          <div className="search_left">
+            <SearchBox setQuoteData={setQuoteData} setShowSearch={setShowSearch} />
           </div>
         </div>
   

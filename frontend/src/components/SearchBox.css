@@ -1,9 +1,10 @@
 .search_box {
+    /* background-color: red; */
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    /* margin-top: 140px; */
+    /* margin-bottom: 80px; */
 }
 
 .suggestion_container {

@@ -22,7 +22,7 @@ function SearchBox({ setQuoteData, setShowSearch }) {
 
       if (data?.length > 0) {
         setLoading(false);
-        setQuoteData(data);
+        setQuoteData(data.map(poem => ({ ...poem, author: term })));
         setShowSearch(true);
       } else if (data.title === "Not Found") {
         alert(`No poems found for author: ${term}`);

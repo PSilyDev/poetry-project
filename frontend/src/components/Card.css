@@ -28,9 +28,12 @@
   background: inherit;
   backdrop-filter: blur(15px);
   z-index: 0;
+  /* background-color: green; */
 }
 
 .poem-content {
+  /* background-color: red; */
+  height: 100%;
   position: relative;
   z-index: 1;
   padding: 30px 20px;
@@ -39,7 +42,7 @@
 
 .poem-content h2 {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 560;
   margin-bottom: 8px;
 }
 
@@ -51,9 +54,11 @@
 }
 
 .lines {
+  /* background-color: green; */
   white-space: pre-wrap;
   font-size: 15px;
   line-height: 1.6;
+  height: 65%;
 }
 
 .nav-buttons {
@@ -76,6 +81,27 @@
 .nav-buttons button:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
+
+.author_pill {
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 7px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  /* backdrop-filter: blur(10px); */
+  /* -webkit-backdrop-filter: blur(10px); */
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); */
+  /* transition: all 0.65s ease; */
+}
+
+
+/* .author_pill:hover {
+  background: black;
+  color: white;
+  transform: scale(1.05);
+}  */
 
 @media (max-width: 600px) {
   .poem-content h2 {
