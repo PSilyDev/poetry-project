@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import './SearchBox.css';
 
-const suggestions = ['Shakespeare', 'Emily Dickinson', 'Robert Frost', 'Maya Angelou', 'Walt Whitman'];
+const suggestions = ['Shakespeare', 'Emily Dickinson', 'Robert Frost', 'Maya Angelou', 'Walt Whitman', 'John Milton'];
 
 function SearchBox({ setQuoteData, setShowSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(false);
+  const [selectedAuthor, setSelectedAuthor] = useState('');
+
 
   const handleSearch = async (term = searchTerm) => {
     console.log('clicked, searchTerm - ', term);
@@ -45,8 +47,10 @@ function SearchBox({ setQuoteData, setShowSearch }) {
         {suggestions.map((item, idx) => (
           <button
             key={idx}
-            className="suggestion_pill"
+            className={`suggestion_pill ${selectedAuthor === item ? 'selected' : ''}`}
+            // className="suggestion_pill"
             onClick={() => {
+              setSelectedAuthor(item);
               setSearchTerm(item);
               handleSearch(item);
             }}

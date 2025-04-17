@@ -17,24 +17,58 @@
 }
 
 .suggestion_pill {
-    background: rgba(255, 255, 255, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 7px;
+    position: relative;
     padding: 10px 18px;
     font-size: 16px;
     font-weight: 400;
-    color: #333;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-    transition: all 0.65s ease;
+    color: white;
+    border-radius: 8px;
+    z-index: 0;
+    background-color: #1e1e1e; /* inner bg */
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
 }
   
-.suggestion_pill:hover {
+.suggestion_pill.selected::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(
+        270deg,
+        #ff6ec4,
+        #7873f5,
+        #4ade80,
+        #facc15,
+        #f87171,
+        #ff6ec4
+    );
+    background-size: 1000% 1000%;
+    animation: borderGradient 20s ease infinite;
+    border-radius: 12px;
+    padding: 4px;
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+}
+  
+/* .suggestion_pill:hover {
     background: black;
     color: white;
     transform: scale(1.05);
-} 
+} */
+
+@keyframes borderGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
 @media (max-width: 768px) {
     .suggestion_pill {
